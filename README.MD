@@ -130,7 +130,7 @@ Las citas se listan de forma cronológica, mostrando primero la cita más próxi
 ### Acciones disponibles
 
 #### 🔍 Ver detalle de cita
-- Navegación a `/admin/quotes/:id`
+- Navegación a `/admin/appointments/:id`
 - Vista individual con todos los datos de la cita
 - Pensada para escalar en el futuro (historial, facturación, etc.)
 
@@ -153,16 +153,16 @@ El backend fue construido con el objetivo de simular un entorno real, manteniend
 - `POST /api/auth/login`  
   Simula autenticación y devuelve un token falso.
 
-- `POST /api/quotes`  
+- `POST /api/appointments`  
   Crea una nueva cita.
 
-- `GET /api/quotes`  
+- `GET /api/appointments`  
   Obtiene todas las citas.
 
-- `GET /api/quotes/{id}`  
+- `GET /api/appointments/{id}`  
   Obtiene el detalle de una cita.
 
-- `DELETE /api/quotes/{id}`  
+- `DELETE /api/appointments/{id}`  
   Elimina una cita.
 
 La persistencia se realiza en memoria y se reinicia al reiniciar el servidor.
