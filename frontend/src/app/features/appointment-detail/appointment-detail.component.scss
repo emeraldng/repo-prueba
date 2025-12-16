@@ -1,0 +1,217 @@
+.sidenav-container {
+    height: 100vh;
+}
+
+.sidenav {
+    width: 260px;
+    background: linear-gradient(180deg, #F79022 0%, #d67a1a 100%);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header del sidenav */
+.sidenav-header {
+    padding: 24px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    // font-size: 32px;
+    // width: 32px;
+    // height: 32px;
+    color: #fff;
+}
+
+.logo-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Navegación */
+.sidenav-nav {
+    flex: 1;
+    padding: 16px 12px;
+    overflow-y: auto;
+}
+
+.nav-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 16px;
+    margin-bottom: 4px;
+    border-radius: 8px;
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    opacity: 0.85;
+
+    &.on {
+        background: rgba(255, 255, 255, 0.15);
+        color: #fff;
+        opacity: 1;
+    }
+}
+
+.nav-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    opacity: 1;
+}
+
+.nav-item.active {
+    background: rgba(255, 255, 255, 0.25);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    opacity: 1;
+}
+
+.nav-item mat-icon {
+    font-size: 24px;
+    width: 24px;
+    height: 24px;
+}
+
+.nav-item span {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+mat-divider {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer del sidenav */
+.sidenav-footer {
+    padding: 16px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.user-info:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.user-avatar mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+    color: #fff;
+}
+
+.user-details {
+    flex: 1;
+}
+
+.user-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 2px;
+}
+
+.user-role {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Toolbar */
+.main-toolbar {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toolbar-spacer {
+    flex: 1;
+}
+
+/* Contenido */
+.content-wrapper {
+    background: #f8fafc;
+    min-height: calc(100vh - 64px);
+}
+
+/* Scrollbar personalizado */
+.sidenav-nav::-webkit-scrollbar {
+    width: 6px;
+}
+
+.sidenav-nav::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 3px;
+}
+
+.sidenav-nav::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+}
+
+.sidenav-nav::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidenav {
+        width: 100%;
+        max-width: 280px;
+    }
+}
+
+.tag {
+    padding: 2px 7px;
+    border-radius: 15px;
+    width: 90px;
+    display: block;
+    text-align: center;
+    &.tag-dental {
+        background-color: #82b0e0;
+        /* Azul vibrante */
+        color: white;
+    }
+
+    &.tag-consultation {
+        background-color: #b0ddbb;
+        /* Azul vibrante */
+        color: white;
+    }
+
+    &.tag-deworming {
+        background-color: #5d5753;
+        /* Azul vibrante */
+        color: white;
+    }
+
+    &.tag-vaccination {
+        background-color: #b5a0de;
+        /* Azul vibrante */
+        color: white;
+    }
+
+    &.tag-grooming {
+        background-color: #ebcb90;
+        /* Azul vibrante */
+        color: white;
+    }
+
+   
+}

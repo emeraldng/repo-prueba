@@ -1,0 +1,122 @@
+.home-page {
+    // background-color: red;
+    // min-height: 100vh;
+    height: 600px;
+    background-image: url('/assets/imgs/main-header.jpg');
+
+    ul {
+        list-style: none;
+
+        li {
+            a {
+                color: white;
+                text-decoration: none;
+                font-size: 15px;
+            }
+
+            margin-right: 20px;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+    }
+
+    .banner-content {
+        color: #F68F19;
+        height: 500px;
+
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+        }
+    }
+
+    .nav {
+
+        background-color: #033361;
+    }
+
+    .home-page__line{
+        background-color: #F68F19;
+        min-height: 500px;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+        color: black;
+
+        h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: white;
+        }
+
+        .card{
+            background-color: white;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+            border-radius: 15px;
+            img{
+                border-top-left-radius: 15px;
+                border-top-right-radius: 15px;
+            }
+
+            .card-body{
+                padding: 15px 20px;
+
+                h5{
+                    color: #033361;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+
+    .home-page__our-team{
+         h2 {
+            font-size: 40px;
+            font-weight: bold;
+            color: #033361
+        }
+
+        p{
+            font-size: 30px;
+            font-style: italic;
+             color: #033361
+        }
+
+        margin-bottom: 150px;
+    }
+}
+
+footer{
+    background-color: #033361;
+    color: white;
+    padding: 60px 0  0;
+    text-align: center;
+    box-shadow: inset 0 4px 6px -6px black;
+
+    ul{
+        text-align: left !important;
+        padding-left: 0 !important;
+    }
+
+    li{
+        margin: 0 !important;
+        margin-bottom: 15px !important;
+    }
+
+    a{
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+}
+
+.btn-modal-appoinment{
+   background-color: #F68F19 !important;
+    color: white !important;
+    /* font-weight: bold; */
+    padding: 30px 62px;
+    border-radius: 38px;   
+}

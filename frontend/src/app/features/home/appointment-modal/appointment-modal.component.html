@@ -1,0 +1,142 @@
+<div class="" *ngIf="!errorMsg && !successMsg">
+  <h2 mat-dialog-title>Agendar cita</h2>
+
+  <div mat-dialog-content>
+    <form [formGroup]="form">
+      <div class="row pt-2">
+        <div class="col-12 col-md-6">
+          <mat-form-field appearance="outline" class="mb-3" style="width:100%">
+            <mat-label>Cliente</mat-label>
+            <input matInput formControlName="customerName">
+            <mat-error *ngIf="form.controls.customerName.touched && form.controls.customerName.hasError('required')">
+              El nombre es obligatorio
+            </mat-error>
+
+            <mat-error *ngIf="form.controls.customerName.touched && form.controls.customerName.hasError('minlength')">
+              Debe tener al menos 4 caracteres
+            </mat-error>
+
+            <mat-error *ngIf="form.controls.customerName.touched && form.controls.customerName.hasError('pattern')">
+              Solo se permiten letras
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mb-3" style="width:100%">
+            <mat-label>Nombre de la Mascota</mat-label>
+            <input matInput formControlName="petName">
+            <mat-error *ngIf="form.controls.petName.touched && form.controls.petName.hasError('required')">
+              El nombre de tu mascota es obligatorio
+            </mat-error>
+
+            <mat-error *ngIf="form.controls.petName.touched && form.controls.petName.hasError('minlength')">
+              Debe tener al menos 3 caracteres
+            </mat-error>
+
+            <mat-error *ngIf="form.controls.petName.touched && form.controls.petName.hasError('pattern')">
+              No se permiten números
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mb-3" style="width:100%">
+            <mat-label>Teléfono</mat-label>
+            <input matInput formControlName="customerPhone">
+            <mat-error *ngIf="form.controls.customerPhone.touched && form.controls.customerPhone.hasError('required')">
+              El número teléfonico es obligatorio
+            </mat-error>
+
+            <mat-error *ngIf="form.controls.customerPhone.touched && form.controls.customerPhone.hasError('pattern')">
+              Ingresa tu número teléfonico a 10 dígitos
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mb-3" style="width:100%">
+            <mat-label>Servicio solicitado</mat-label>
+            <mat-select formControlName="appointmentType">
+              <mat-option value="CONSULTATION">Consulta médica</mat-option>
+              <mat-option value="DENTAL">Consulta dental</mat-option>
+              <mat-option value="DEWORMING">Desparasitación</mat-option>
+              <mat-option value="VACCINATION">Aplicación de vacunas</mat-option>
+              <mat-option value="GROOMING">Servicio de estética</mat-option>
+            </mat-select>
+            <mat-error
+              *ngIf="form.controls.appointmentType.touched && form.controls.appointmentType.hasError('required')">
+              Selecciona el tipo de servicio que deseas agendar
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline" class="mb-3" style="width:100%">
+            <mat-label>Comentario adicional</mat-label>
+            <textarea matInput rows="5" formControlName="comment" maxlength="200"></textarea>
+            <mat-hint align="end">
+              {{ $any(form.controls.comment.value)?.length || 0 }}/200
+            </mat-hint>
+
+          </mat-form-field>
+        </div>
+        <div class="col-12 col-md-6">
+          <div class="mb-2">
+            <mat-label>Selecciona el día y hora</mat-label>
+          </div>
+
+          <p-calendar formControlName="appointmentAt" [inline]="true" [showTime]="true" hourFormat="24"
+            [showIcon]="true">
+          </p-calendar>
+
+          <small class="error-date"
+            *ngIf="form.controls.appointmentAt.touched && form.controls.appointmentAt.hasError('required')">
+            Selecciona fecha y hora
+          </small>
+        </div>
+      </div>
+
+    </form>
+  </div>
+
+  <div mat-dialog-actions align="end">
+    <button mat-button (click)="close()">Cancelar</button>
+    <button mat-flat-button color="primary" (click)="submit()" [disabled]="isSubmitting">
+      {{ isSubmitting ? 'Enviando…' : 'Enviar' }}
+    </button>
+  </div>
+
+</div>
+
+
+<div mat-dialog-content class="successMsg" *ngIf="successMsg">
+  <div class="success-animation">
+    <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+      <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+      <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+    </svg>
+  </div>
+  <h3>Cita agendada con éxito</h3>
+  <p>En un momento recibirás la confirmación de tu cita por whatsapp</p>
+</div>
+
+
+<div mat-dialog-content class="errorMsg" *ngIf="errorMsg">
+ <div class="d-flex">
+   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" height="150" width="150">
+    <circle cx="40" cy="40" r="32" fill="transparent" stroke-width="5" stroke="#ff6b41" />
+    <path d="M40 40 L40 40" fill="transparent" stroke="#ff6b41" stroke-width="5" width="5" stroke-linecap="round"
+      opacity="1">
+      <animate id="line1" attributeName="d" from="M40 40 L40 40" to="M25 25 L55 55" dur="0.2" fill="freeze" />
+      <animateTransform attributeName="transform" type="rotate" from="0 40 40" to="90 40 40" dur=".3s"
+        values="20 40 40; 40 40 40; 70 40 40; 100 40 40; 90 40 40" keyTimes="0; .25; .5; .75; 1" begin="line1.end"
+        fill="freeze" repeatCount="1" />
+
+    </path>
+
+    <path d="M55 25 L55 25" fill="transparent" stroke="#ff6b41" stroke-width="5" width="5" stroke-linecap="round"
+      opacity="1">
+      <animate id="line1" attributeName="d" from="M55 25 L55 25" to="M25 55 L55 25" dur="0.2" fill="freeze" />
+      <animateTransform attributeName="transform" type="rotate" from="0 40 40" to="90 40 40" dur=".4s"
+        values="20 40 40; 40 40 40; 70 40 40; 100 40 40; 90 40 40" keyTimes="0; .25; .5; .75; 1" begin="line1.end"
+        fill="freeze" repeatCount="1" />
+    </path>
+  </svg>
+
+ </div>
+  <h3>Error al agendar</h3>
+  <p>Por favor inténtalo de nuevo</p>
+</div>

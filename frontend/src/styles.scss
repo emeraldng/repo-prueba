@@ -1,1 +1,152 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+  background-color: white !important;
+
+}
+
+
+// --darkreader-inline-fill: var(--darkreader-background-000000, #181a1b);
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: white !important;
+}
+
+.theme-white {
+  background-color: white !important;
+}
+
+.mat-datepicker-content-touch .mat-datepicker-content-container.mat-datepicker-content-container-with-time,
+.mat-datepicker-content-touch .mat-datepicker-content-container {
+  background-color: white !important;
+  width: auto !important;
+}
+
+
+:host ::ng-deep .mat-datepicker-content-touch .mat-datepicker-content-container.mat-datepicker-content-container-with-time,
+:host ::ng-deep .mat-datepicker-content-touch .mat-datepicker-content-container {
+  background-color: white !important;
+  width: auto !important;
+}
+
+.mat-calendar-body-selected {
+  background-color: #3624ae95;
+  color: white;
+}
+
+.mat-calendar-body-today:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+  border-color: #4a1dec;
+  background-color: transparent;
+}
+
+
+.mat-calendar-body-cell-content {
+  border-color: #3624ae95;
+}
+
+/* Input válido y tocado */
+.mat-mdc-form-field.ng-valid.ng-touched .mdc-notched-outline__leading,
+.mat-mdc-form-field.ng-valid.ng-touched .mdc-notched-outline__notch,
+.mat-mdc-form-field.ng-valid.ng-touched .mdc-notched-outline__trailing {
+  border-color: #2e7d32 !important; // verde
+}
+
+
+ngx-mat-timepicker {
+  .mat-mdc-form-field-flex {
+    padding: 0 !important;
+  }
+}
+
+
+ngx-mat-timepicker {
+  .mat-form-field-appearance-outline {
+    width: 50px !important;
+    max-width: 50px !important;
+
+    .mat-form-field-wrapper {
+      padding-bottom: 0;
+    }
+
+    .mat-form-field-infix {
+      border-top: 0.36em solid transparent;
+    }
+  }
+}
+
+
+// .cdk-overlay-container,
+// .cdk-global-overlay-wrapper {
+//   pointer-events: none;
+//   top: unset;
+//   left: 0;
+//   height: unset;
+//   width: 100%;
+// }
+
+
+// .modal-appointment-form {
+//   .mat-mdc-dialog-container {
+//     height: 600px;
+//   }
+// }
+
+
+.modal-appointment-form .mat-mdc-dialog-content {
+
+
+  @media (min-width: 1281px) {
+
+    min-height: 600px;
+    width: 875px;
+  }
+
+  @media (min-width: 320px) and (max-width: 767px) {
+    padding: 20px 15px 20px 15px !important;
+
+  }
+
+}
+
+
+.p-calendar.p-calendar-w-btn {
+  width: 100%;
+}
+
+
+.p-datepicker table td>span.p-highlight {
+  background-color: #1c4bd0;
+  color: white;
+}
+
+.mat-mdc-form-field-error-wrapper {
+  padding: 0 !important;
+}
+
+
+.error::ng-star-inserted {
+
+  &before,
+  &after {
+    content: none;
+  }
+}
+
+
+.error-date {
+  color: #f32f21;
+  font-size: 12px;
+}
+
+.nav.mat-toolbar {
+  position: fixed; /* Esto fija la posición del elemento */
+  top: 0;          /* Lo coloca en la parte superior de la ventana */
+  left: 0;         /* Lo alinea a la izquierda de la ventana */
+  right: 0;        /* Lo extiende por todo el ancho de la ventana */
+  z-index: 1000;   /* Asegura que esté por encima de otros elementos */
+}
+

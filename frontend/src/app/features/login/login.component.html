@@ -1,0 +1,38 @@
+<div class="login-container">
+  <div class="login-container__content">
+    <mat-card style="max-width: 420px; margin: 24px auto; padding: 16px;">
+      <div class="text-center">
+        <mat-icon>pets</mat-icon>
+      </div>
+
+      <h4 class="text-center mt-1">Iniciar sesión</h4>
+
+      <form [formGroup]="form" (ngSubmit)="submit()">
+        <mat-form-field appearance="outline" style="width:100%">
+          <mat-label>Usuario</mat-label>
+          <input matInput formControlName="username" autocomplete="username" />
+          <mat-error *ngIf="form.controls.username.touched && form.controls.username.hasError('required')">
+            Usuario requerido
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" style="width:100%">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" formControlName="password" autocomplete="current-password" />
+          <mat-error *ngIf="form.controls.password.touched && form.controls.password.hasError('required')">
+            Contraseña requerida
+          </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" style="width:100%" type="submit" [disabled]="loading">
+          Entrar
+        </button>
+
+        <small class="d-block mt-2 mb-2">
+          usuario <b>admin</b> / contraseña <b>123</b>
+        </small>
+      </form>
+    </mat-card>
+
+  </div>
+</div>
