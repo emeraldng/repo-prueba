@@ -31,7 +31,10 @@ export class LoginComponent {
       return;
     }
 
-    const { username, password } = this.form.getRawValue();
+
+    const username = this.form.controls['username'].value?.trim();
+    const password = this.form.controls['password'].value?.trim();
+
     this.loading = true;
 
     this.auth.login(username!, password!).subscribe({

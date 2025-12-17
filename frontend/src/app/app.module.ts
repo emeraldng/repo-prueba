@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -44,6 +45,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ConfirmModalComponent } from './shared/confirm-modal/confirm-modal.component';
 // import { AppointmentType } from './shared/pipes/import-type.pipe';
 import { AppointmentType } from './shared/pipes/appointment-type.pipe';
+import { AdminLayoutComponent } from './features/admin/admin-layout/admin-layout.component';
 
 @NgModule({
   declarations: [
@@ -54,10 +56,12 @@ import { AppointmentType } from './shared/pipes/appointment-type.pipe';
     AppointmentDetailComponent,
     AppointmentModalComponent,
     ConfirmModalComponent,
-    AppointmentType
+    AppointmentType,
+    AdminLayoutComponent
   ],
   imports: [
     BrowserModule,
+    AppRoutingModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
