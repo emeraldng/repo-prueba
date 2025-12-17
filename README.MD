@@ -169,6 +169,22 @@ La persistencia se realiza en memoria y se reinicia al reiniciar el servidor.
 
 ---
 
+### URL vistas finales
+
+- `http://localhost:4200/`  
+  Landing de negocio principal, botón hacia formulario.
+
+- `http://localhost:4200/login`  
+  Login para admin.
+
+- `http://localhost:4200/admin`  
+  Tabla de visualización y gestión de citas.
+
+- `http://localhost:4200/admin/appointment/1`  
+  Vista individual del detalle de una cita.
+
+---
+
 ## 🛠️ Tecnologías utilizadas
 
 ### Frontend
@@ -197,12 +213,12 @@ La persistencia se realiza en memoria y se reinicia al reiniciar el servidor.
 - Java 17
 - Maven
 
-### Backend
+### Backend y Fronted
 ```bash
 cd backend
 mvn spring-boot:run
 
-### Frontend
+
 ```bash
 cd frontend
 npm install
